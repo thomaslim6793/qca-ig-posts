@@ -10,19 +10,7 @@ END_POINT = "https://api.unsplash.com/search/photos"
 
 # Basic querying function 
 def search_unsplash(query, page=1, per_page=10):
-    """
-    Search for photos on Unsplash based on the given query.
-
-    Parameters:
-    - query (str): The search term to use for the query.
-    - page (int, optional): The page number to fetch. Default is 1.
-    - per_page (int, optional): Number of items per page. Default is 10.
-    
-    Returns:
-    - dict: JSON response from the Unsplash API containing details about 
-            the photos that match the query, as well as metadata about 
-            the search results.
-    """
+   
     headers = {
         'Authorization': f'Client-ID {ACCESS_KEY}'
     }
@@ -35,6 +23,7 @@ def search_unsplash(query, page=1, per_page=10):
     
     response = requests.get(END_POINT, headers=headers, params=params)
     response.raise_for_status()  # Check if the request was successful
+    
     return response.json()
 
 
@@ -200,13 +189,20 @@ import argparse
 parser = argparse.ArgumentParser(description="Download images from Unsplashed API based on search query and date range")
 
 parser.add_argument("--title", type=str, required=True, help="Search query for Unsplash")
-parser.add_argument("--start-date", type=str, required=True, help="Start date in YYYY-MM-DD format")
-parser.add_argument("--end-date", type=str, required=True, help="End date in YYYY-MM-DD format")
 parser.add_argument("--num_images", type=int, required=True, help="Number of images to download")
+parser.add_argument("--page_num", type=int, required=False, help="page number")
+parser.add_argument("--start-date", type=str, required=False, help="Start date in YYYY-MM-DD format")
+parser.add_argument("--end-date", type=str, required=False, help="End date in YYYY-MM-DD format")
+parser.add_argument("--dest", type=str, required=False, help="Destination folder")
 
 args = parser.parse_args()
-json_response = query_in_date_range(args.title, args.start_date, args.end_date, args.num_images)
-download_images_from_json(json_response)
+
+if args.start_date and args.end_date:
+    json_response = query_in_date_range(args.title, args.start_date, args.end_date, args.num_images)
+else:
+    json_response = json.dumps(search_unsplash(args.title, page=args.page_num, per_page=args.num_images))
+
+download_images_from_json(json_response, download_folder=args.dest) 
 
 
 
