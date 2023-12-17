@@ -33,8 +33,7 @@ Below are the desired features and some resources:
          - Each detected object is annotated with its key points, resulting in a "stick figure"
          like representation of each object rather than a box. 
       - Authors created and a domain specific dataset: LOOK
-      - Also uses publically available dataset: JAAD, and PIE
-      
+      - Also uses publically available dataset: JAAD, and PIE     
 
 5. Gender:
    - a. Female
@@ -59,8 +58,12 @@ Below are the desired features and some resources:
    - a. Closeup: face and shoulders
    - b. Mid-range: waist up or occupying almost full frame
    - c. Long-range: person's fill half the picture frame or less
-   - https://rsomani95.github.io/ai-film-1.html
-
+   - Resources:
+      - https://rsomani95.github.io/ai-film-1.html
+         - Project is no longer open source, now need permission from creator to use it...
+      - https://anyirao.com/projects/ShotType.html
+         - This project doesn't provide a model to use, but does provide a dataset of 
+           short video clips and a corresponding annotation file in JSON format. 
 8. Facial expression:
    - Smile/anger/disappointed/...
    - Resources:
@@ -94,10 +97,6 @@ Below are the desired features and some resources:
       - Scikit-image: Another Python library focused on image processing. It can be used to compute image statistics, like entropy.
       - ColorThief: A Python library that extracts color palettes from images. It can be used as a starting point to understand color distribution.
 
-
-- Other resources:
-   - Data: 
-      - Object detection labeled dataset: https://github.com/EscVM/OIDv4_ToolKit
 
 Please note that while some features have existing Github pages or papers, others require additional exploration. The github pages I refer to should also be checked whether we can use their sources for our own purposes. I recommend reviewing the mentioned sources and continuing the search for additional resources to ensure a comprehensive analysis of all desired visual features for critical visual discourse analysis.
 
