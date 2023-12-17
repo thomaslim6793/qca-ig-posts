@@ -193,7 +193,7 @@ parser.add_argument("--num_images", type=int, required=True, help="Number of ima
 parser.add_argument("--page_num", type=int, required=False, help="page number")
 parser.add_argument("--start-date", type=str, required=False, help="Start date in YYYY-MM-DD format")
 parser.add_argument("--end-date", type=str, required=False, help="End date in YYYY-MM-DD format")
-parser.add_argument("--dest", type=str, required=False, help="Destination folder")
+parser.add_argument("--dest", type=str, required=True, help="Destination folder")
 
 args = parser.parse_args()
 
@@ -204,5 +204,7 @@ else:
 
 download_images_from_json(json_response, download_folder=args.dest) 
 
-
+# Example usage: 
+# python download_images.py --title "black lives matter" --num_images 100 --start-date 2020-05-01 --end-date 2020-12-31 --dest downloads
+# python3 get_images/get-images-with-API/download_images.py --title="night_sky" --num_images=1 --dest=night_sky
 

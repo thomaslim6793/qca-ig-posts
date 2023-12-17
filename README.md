@@ -92,11 +92,19 @@ Below are the desired features and some resources:
 11. The size of the object/subject: Further research is needed to find specific resources for this feature.
 
 12. Color contrast/diversity: Further research is needed to find specific resources for this feature.
-   - Resources: For this task, perform color analysis of images and produce statistics and measures of color contrast or diversity.
-      - OpenCV: A comprehensive library for computer vision tasks, it offers functions to compute color histograms, clustering, and more.
-      - Scikit-image: Another Python library focused on image processing. It can be used to compute image statistics, like entropy.
-      - ColorThief: A Python library that extracts color palettes from images. It can be used as a starting point to understand color distribution.
-
+   - color analysis methods:
+      - Colorimetrics:
+         - Color histograms
+         - Edge Detection Algorithms
+         - Color space transformation
+      - Machine Learning methods:
+         - Classification tasks where target is the property of color like color contrast, and its labels are 
+         discrete values of the property. 
+            - E.g. target = color contrast, label1 = 'little contrast', label2 = 'moderate contrast', label3 = 'high contrast'
+         - K-means clustering to cluster images with similar color attributes. 
 
 Please note that while some features have existing Github pages or papers, others require additional exploration. The github pages I refer to should also be checked whether we can use their sources for our own purposes. I recommend reviewing the mentioned sources and continuing the search for additional resources to ensure a comprehensive analysis of all desired visual features for critical visual discourse analysis.
 
+Relevant Researches:
+   - Jain, S., Pulaparthi, K., & Fulara, C. (2015). Content based image retrieval. Int. J. Adv. Eng. Glob. Technol, 3, 1251-1258.
+      - https://web.archive.org/web/20200321093634id_/http://ijaegt.com/wp-content/uploads/2015/08/409594-pp-1251-1258-jain.pdf
